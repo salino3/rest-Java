@@ -40,4 +40,12 @@ public class User {
         this.age = age;
     }
 
+    public String getOccupation() {
+        return occupation;
+    }
+
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
 }
