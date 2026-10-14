@@ -1,5 +1,12 @@
 package com.java.corse.rest.Models;
 
+import org.springframework.data.annotation.Id;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+
+@Entity
 public class User {
 
     private long id;
@@ -8,6 +15,8 @@ public class User {
     private int age;
     private String occupation;
 
+    @Id
+    @GeneratedValue
     public long getId() {
         return id;
     }
@@ -16,6 +25,7 @@ public class User {
         this.id = id;
     }
 
+    @Column
     public String getFirstName() {
         return firstName;
     }
@@ -24,6 +34,7 @@ public class User {
         this.firstName = firstName;
     }
 
+    @Column
     public String getLastName() {
         return lastName;
     }
@@ -32,6 +43,7 @@ public class User {
         this.lastName = lastName;
     }
 
+    @Column
     public int getAge() {
         return age;
     }
@@ -40,6 +52,7 @@ public class User {
         this.age = age;
     }
 
+    @Column
     public String getOccupation() {
         return occupation;
     }
