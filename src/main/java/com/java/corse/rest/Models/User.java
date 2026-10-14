@@ -1,12 +1,14 @@
 package com.java.corse.rest.Models;
 
-import org.springframework.data.annotation.Id;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "users")
 public class User {
 
     private long id;
@@ -16,7 +18,7 @@ public class User {
     private String occupation;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long getId() {
         return id;
     }
@@ -60,5 +62,4 @@ public class User {
     public void setOccupation(String occupation) {
         this.occupation = occupation;
     }
-
 }
