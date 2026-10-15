@@ -52,17 +52,19 @@ public class Exercices {
 
     public static String transformString(String str) {
 
-        char[] charStr = str.toCharArray();
-        Arrays.sort(charStr);
-        String sorted = new String(charStr);
+        String cleaned = str.toLowerCase().replaceAll("\\s+", "");
 
-        return sorted.toLowerCase().replaceAll("\\s+", "");
+        char[] charStr = cleaned.toCharArray();
+        Arrays.sort(charStr);
+
+        return new String(charStr);
     }
 
     public static boolean isAnagram(String str1, String str2) {
         if (str1.length() != str2.length())
             return false;
 
-        return transformString(str1) == transformString(str2);
+        return transformString(str1).equals(transformString(str2));
+
     }
 }
